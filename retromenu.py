@@ -19,6 +19,7 @@ def main(stdscr, menu):
     curses.curs_set(0)
     selection = 0;
     while 1:
+        print_menu(stdscr, selection, menu);
         key = stdscr.getch() # get pressed key
         stdscr.clear()
         if key == curses.KEY_UP:
@@ -35,4 +36,5 @@ def make_menu(menu):
     return curses.wrapper(main, menu)
 
 if __name__ == '__main__' :
-    make_menu();
+    print(make_menu(['item 1', 'item 2', 'item 3']))
+
